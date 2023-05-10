@@ -1,30 +1,30 @@
 import * as yup from "yup";
 
-const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
-//min 5 chars, 1 uppercase letter, 1 lowercase letter, 1 numeric digit
+const  Rules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 
 export const BasicFormValidation = yup.object().shape({
   name: yup
     .string()
-    .min(3, "name must be at least 3 characters")
+    .min(4, "name must be at least 4 characters")
     .required("name is required"),
-  age: yup
+  price: yup
     .number()
-    .positive("age cannot be negative number")
+    .positive("price cannot be negative number")
     .integer()
-    .required("age is required"),
-  email: yup
+    .required("price is required"),
+    discountPercentage : yup
+    .number()
+    .positive("price cannot be negative number")
+    .integer()
+    .min(0,"discountPercentage  cannot be negative number")
+    .max(100,"discountPercentage  cannot be bigger than 100")
+    .required("discountPercentage  is required"),
+  imageURL : yup
     .string()
-    .email("email is not valid")
-    .required("email is required"),
-  password: yup
-    .string()
-    .matches(passwordRules, { message: "password is not strong enough!" })
-    .min(5, "password must be at least 5 chars")
-    .required("password is required"),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref("password"), null], "password doesn't match")
-    .required("confirm password is required"),
-  isMarried: yup.boolean().oneOf([true],"evli olmalisan").required("required")
+    .required("imageURL  is required"),
+    unitsInStock : yup
+    .number()
+    .positive("unitsInStock cannot be negative number")
+    .integer()
+    .required("confirm unitsInStock  is required"),
 });

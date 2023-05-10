@@ -14,19 +14,21 @@ const BasicForm = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
-      age: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      isMarried: false
+      price: "",
+      discountPercentage: "",
+      imageURL: "",
+      unitsInStock: "",
     },
     onSubmit: handleSubmit,
     validationSchema: BasicFormValidation,
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <input
+<div style={{width:'40%', boxShadow:'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',margin:'0 auto', border:'1px solid' ,borderRadius:'10px', height:'350px',padding:'30px' }}>
+
+    <form onSubmit={formik.handleSubmit} >
+    <h1 style={{textAlign:'center'}}>Add Products</h1>
+      <input    style={{display:'block', marginBottom:'10px', width:'90%'}}
         className={
           formik.errors.name && formik.touched.name ? "input-error" : ""
         }
@@ -38,78 +40,65 @@ const BasicForm = () => {
         type="text"
       />
       {formik.errors.name && formik.touched.name && (
-        <p style={{ color: "red" }}>{formik.errors.name}</p>
+        <span style={{ color: "red" }}>{formik.errors.name}</span>
       )}
-      <input
-        className={formik.errors.age && formik.touched.age ? "input-error" : ""}
+      <input style={{display:'block', marginBottom:'10px', width:'90%'}}
+        className={formik.errors.price && formik.touched.price ? "input-error" : ""}
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
-        value={formik.values.age}
-        name="age"
-        placeholder="Enter Age"
+        value={formik.values.price}
+        name="price"
+        placeholder="Enter Price"
         type="number"
       />
-      {formik.errors.age && formik.touched.age && (
-        <p style={{ color: "red" }}>{formik.errors.age}</p>
+      {formik.errors.price && formik.touched.price && (
+        <span style={{ color: "red" }}>{formik.errors.price}</span>
       )}
-      <input
+      <input   style={{display:'block', marginBottom:'10px',width:'90%'}}
         className={
-          formik.errors.email && formik.touched.email ? "input-error" : ""
+          formik.errors.discountPercentage && formik.touched.discountPercentage ? "input-error" : ""
         }
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
-        value={formik.values.email}
-        name="email"
-        placeholder="Enter Email"
-        type="email"
+        value={formik.values.discountPercentage}
+        name="discountPercentage"
+        placeholder="Enter DiscountPercentage"
+        type="number"
       />
-      {formik.errors.email && formik.touched.email && (
-        <p style={{ color: "red" }}>{formik.errors.email}</p>
+      {formik.errors.discountPercentage && formik.touched.discountPercentage && (
+        <span style={{ color: "red" }}>{formik.errors.discountPercentage}</span>
       )}
-      <input
+      <input    style={{display:'block', marginBottom:'10px', width:'90%'}}
         className={
-          formik.errors.password && formik.touched.password ? "input-error" : ""
+          formik.errors.imageURL && formik.touched.imageURL ? "input-error" : ""
         }
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
-        value={formik.values.password}
-        name="password"
-        placeholder="Enter Password"
-        type="password"
+        value={formik.values.imageURL}
+        name="imageURL"
+        placeholder="Enter ImageURL"
+        type="imageURL"
       />
-      {formik.errors.password && formik.touched.password && (
-        <p style={{ color: "red" }}>{formik.errors.password}</p>
-      )}
-      <input
+     
+      <input   style={{display:'block', marginBottom:'10px', width:'90%'}}
         className={
-          formik.errors.confirmPassword && formik.touched.confirmPassword
-            ? "input-error"
-            : ""
+          formik.errors.unitsInStock && formik.touched.unitsInStock
+            ? "input-error" : ""
         }
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
-        value={formik.values.confirmPassword}
-        name="confirmPassword"
-        placeholder="Confirm Password"
-        type="password"
+        value={formik.values.unitsInStock}
+        name="unitsInStock"
+        placeholder="Enter unitsInStock"
+        type="number"
       />
-      <label htmlFor="isMarried">Is Married? </label>
-      <input
-        className={
-          formik.errors.isMarried && formik.touched.isMarried ? "input-error" : ""
-        }
-        onBlur={formik.handleBlur}
-        onChange={formik.handleChange}
-        value={formik.values.isMarried}
-        name="isMarried"
-        id="isMarried"
-        type="checkbox"
-      />
-      {formik.errors.isMarried && formik.touched.isMarried && (
-        <p style={{ color: "red" }}>{formik.errors.isMarried}</p>
+      {formik.errors.unitsInStock && formik.touched.unitsInStock && (
+        <span style={{ color: "red" }}>{formik.errors.unitsInStock}</span>
       )}
-     <button disabled={formik.isSubmitting || Object.keys(formik.errors).length>0} type="submit">Submit Form</button>
+    
+     <button style={{display:'block',margin:'10px auto' , width:'30%',backgroundColor:'green', border:'none', padding:'10px', color:'white'}} disabled={formik.isSubmitting || Object.keys(formik.errors).length>0} type="submit">Submit Form</button>
     </form>
+    </div>
   );
 };
 
