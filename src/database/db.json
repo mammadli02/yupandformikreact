@@ -1,0 +1,44 @@
+{
+  "prpducts": [
+    {
+      "name": "apple",
+      "price": 100,
+      "discountPercentage": 100,
+      "imageURL": "https://unimall.az/images/detailed/234/40147561c48cee8b8a64cf76b26cd2cd.jpg",
+      "unitsInStock": 500,
+      "id": "1683759162303"
+    },
+    {
+      "name": "banana",
+      "price": 55,
+      "discountPercentage": 77,
+      "imageURL": "https://th-thumbnailer.cdn-si-edu.com/qwdFU8TzPixEtFzRLC2V_Ezr2tw=/fit-in/1600x0/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2Fd5%2F24%2Fd5243019-e0fc-4b3c-8cdb-48e22f38bff2%2Fistock-183380744.jpg",
+      "unitsInStock": 77,
+      "id": ""
+    },
+    {
+      "name": "lemon",
+      "price": 555,
+      "discountPercentage": 55,
+      "imageURL": "https://www.herbazest.com/imgs/3/f/2/9710/lemon.jpg",
+      "unitsInStock": 555,
+      "id": "1683761394479"
+    },
+    {
+      "name": "strowberry",
+      "price": 55,
+      "discountPercentage": 55,
+      "imageURL": "https://5.imimg.com/data5/UB/KC/MY-21743992/fresh-strawberry-250x250.jpg",
+      "unitsInStock": 555,
+      "id": "1683761394479"
+    },
+    {
+      "name": "chwerry",
+      "price": 57,
+      "discountPercentage": 55,
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Cherry_season_%2848216568227%29.jpg",
+      "unitsInStock": 555,
+      "id": "1683761394479"
+    }
+  ]
+}

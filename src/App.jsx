@@ -1,11 +1,12 @@
-import BasicForm from "./BasicForm"
+
+import AddProductForm from "./BasicForm"
 
 function App() {
 
   return (
    <>
   
-    <BasicForm/>
+    <AddProductForm/>
    </>
   )
 }
