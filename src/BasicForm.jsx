@@ -47,7 +47,7 @@ const AddProductForm = () => {
 }, [])
   return (
     <>
-    <div style={{width:'40%', boxShadow:'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',margin:'0 auto', border:'1px solid' ,borderRadius:'10px', height:'350px',padding:'30px' }}>
+    <div style={{width:'40%', boxShadow:'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',margin:'0 auto', border:'1px solid' ,borderRadius:'10px', height:'300px',padding:'30px' }}>
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
         <Form>
